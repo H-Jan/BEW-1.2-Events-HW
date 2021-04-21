@@ -81,6 +81,7 @@ def create():
         # TODO: Create a new event with the given title, description, & 
         # datetime, then add and commit to the database
         new_event = Event(title=new_event_title, description = new_event_description, date_and_time = date_and_time)
+        #print(new_event)
         db.session.add(new_event)
         db.session.commit()
 

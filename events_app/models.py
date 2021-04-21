@@ -13,9 +13,9 @@ class Guest(db.Model):
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    #title = db.Column(db.String(), nullable=False)
-    #description = db.Column(db.String(), nullable=False)
-    #date_and_time = db.Column(db.DateTime, nullable=False)
+    title = db.Column(db.String(), nullable=False)
+    description = db.Column(db.String(), nullable=False)
+    date_and_time = db.Column(db.DateTime, nullable=False)
     guests = db.relationship('Guest', secondary='table_guest_event', back_populates = 'events_attending')
 
     #NOTE:  completed ToDo in Event Model, but must comment out title, description, date_and_time to run. I have yet to completely find error
