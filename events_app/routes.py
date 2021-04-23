@@ -36,8 +36,8 @@ def rsvp(event_id):
     # TODO: Get the event with the given id from the database
     is_returning_guest = request.form.get('returning')
     guest_name = request.form.get('guest_name')
-    event = Event.query.filter_by(name=guest_name).one()
-
+    event = Event.query.filter_by(id=event_id).one()
+    
     if is_returning_guest:
         # TODO: Look up the guest by name, and add the event to their 
         # events_attending, then commit to the database
